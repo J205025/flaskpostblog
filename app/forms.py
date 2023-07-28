@@ -38,5 +38,5 @@ class PasswordResetRequestForm(FlaskForm):
             raise ValidationError('E-mail doesn\'t exit')  
 
 class ResetPasswordForm(FlaskForm):
-    password = PasswordField('Password', validators=[DataRequired(), Length(min=5, max=20)])
-    confirm = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    submit = SubmitField('Send')

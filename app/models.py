@@ -23,4 +23,4 @@ class User(db.Model, UserMixin):
             data = jwt.decode(token, current_app.config['SECRET_KEY'], algorithms=["HS256"])
             return User.query.filter_by(id=data['id']).first()
         except:
-            return 0
+            return 

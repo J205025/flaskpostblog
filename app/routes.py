@@ -70,7 +70,8 @@ def reset_password_request():
         email = form.email.data
         user = User.query.filter_by(email=email).first()
         token = generate_reset_password_token()
-        send_reset_password_token()
+        send_reset_password_mail(user, token)
+        flash('Password reset request mail is sent, please check ypur mail', category='info')
     return render_template('reset_password_request.html', form=form, title= title)
 
 @app.route('/reset_password', methods=['get','post'])
