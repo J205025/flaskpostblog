@@ -1,0 +1,11 @@
+*.mp3
+*.MP3
+*.m3u
+*.txt
+*.swp
+.venv/
+./static/assets
+./flask_session
+*.pyc
+__pycache__
+
