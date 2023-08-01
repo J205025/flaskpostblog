@@ -17,9 +17,12 @@ mail = Mail(app)
 db = SQLAlchemy(app)
 app.app_context().push()
 login.login_view ='login'
-login.login_message= 'You must login to acess this page'
+login.login_message= 'You must login to access this page'
 login.login_message_category = 'info'
 
 from app.routes import *
+
+
+
 
     

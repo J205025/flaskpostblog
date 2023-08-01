@@ -17,6 +17,9 @@
         <li class ="{% if request.endpoint == 'index' %}active{% endif %}">
           <a href="{{url_for('index')}}">Home</a>
         </li>
+        <li class ="{% if request.endpoint == 'index' %}active{% endif %}">
+          <a href="{{url_for('post')}}">Post</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {% if not current_user.is_authenticated %}

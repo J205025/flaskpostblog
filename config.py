@@ -18,6 +18,6 @@ class Config(object):
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = 465
     MAIL_USE_SSL = True
-    MAIL_USERNAME = os.environ.get('GMAIL_USERNAME')or 'j207031'
+    MAIL_USERNAME = os.environ.get('GMAIL_USERNAME')or 'j207031@gmail.com'
     MAIL_PASSWORD = os.environ.get('GMAIL_PASSWORD')or 'Xintias80'
        
