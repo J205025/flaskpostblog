@@ -1,14 +1,41 @@
 {% extends 'base.html' %}
 
 {% block app_content %}
-<div class="container">
-<h1>Post</h1>
-<br>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 col-md-offset-1">
+    <h1>Hello, {{current_user.username}}</h1>
+    <br>
     {% import 'bootstrap/wtf.html' as wtf %}
     {{wtf.quick_form(form)}}
+    <hr>
+    {% for post in posts.items%}
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img src="{{post.author.avatar_img}}" alt="avatar" class="media-object" width="64px">
+        </a>
+      </div>
+ </div>
+<div class="row">
+      <div class="media-body">
+        <h4 class="media-heading">{{post.authorusername}}</h4>
+        <small class="text-muted">{{post.timestamp}}</small>
+        <p>{{post.body}}</p>
+      </div>
     </div>
-</div>
-</div>
+    {% endfor %}
+
+  </div>
+    <div class="col-md-3 col-md-offset-2">
+    <div class="thumbnail text-center">
+      <br>
+      <img src="{{current_user.avatar_img}}" alt="avatar" width="100px">
+      <div class="caption">
+        <h3>{{current_user.username}}</h3>
+        <p>
+          <a href="#" class="btn btn-primary" role="button">{{n_followers}} followers</a>
+          <a href="#" class="btn btn-default" role="button">{{n_followed}} followed</a>
+        </p>
+      </div>
+  </div>
 {% endblock %}

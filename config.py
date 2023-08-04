@@ -20,4 +20,8 @@ class Config(object):
     MAIL_USE_SSL = True
     MAIL_USERNAME = os.environ.get('GMAIL_USERNAME')or 'j207031@gmail.com'
     MAIL_PASSWORD = os.environ.get('GMAIL_PASSWORD')or 'Xintias80'
-       
+    # APScheduler 
+    SCHEDULER_API_ENABLED = True
+    
+
+        
